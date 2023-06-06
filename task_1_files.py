@@ -1,5 +1,5 @@
-'''Задача №1
-Должен получится следующий словарь'''
+'''Задача №1'''
+
 import json
 with open('recipes.txt', 'r', encoding='utf-8') as f:
     cook_book = {}
@@ -11,11 +11,5 @@ with open('recipes.txt', 'r', encoding='utf-8') as f:
               list_deash += [{'ingredient_name' : eat, 'quantity' : colvo, 'measure' : ed_izmer}]
          cook_book[dishes.strip()] = list_deash
          f.readline()
-    print(cook_book)
-    # print(len(cook_book))
-    # print(type(cook_book))
-
-with open('cook_book.json', 'w', encoding='utf-8') as f :
-    json.dump(cook_book, f, indent=3)
-with open('cook_book.json', 'r') as f :
-     data = json.load(f)
+res = json.dumps(cook_book, indent=2)
+print(res)
