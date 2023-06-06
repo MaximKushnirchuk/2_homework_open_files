@@ -4,6 +4,7 @@
 Необходимо объединить их в один по следующим правилам:
 - Содержимое исходных файлов в результирующем файле должно быть отсортировано по количеству строк в них (то есть первым нужно записать файл с наименьшим количеством строк, а последним - с наибольшим)
 - Содержимое файла должно предваряться служебной информацией на 2-х строках: имя файла и количество строк в нем'''
+
 with open('1.txt', 'r', encoding='utf-8') as f :
     text_1 = f.readlines()
     text_1.insert(0, f'{len(text_1)}\n')
@@ -25,14 +26,3 @@ with open('all_text.txt', 'a', encoding='utf-8') as f :
     for one_text in all_lis :
         for one_string in one_text :
             f.write(one_string)
-
-
-
-
-
-
-# # for last_string in all_lis :
-# #     last_string[-1].strip()
-# #     last_string[-1] += '\n'        
-# # print(all_lis)
-
