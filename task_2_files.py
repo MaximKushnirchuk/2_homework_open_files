@@ -3,16 +3,8 @@
 get_shop_list_by_dishes(dishes, person_count)
 На выходе мы должны получить словарь с названием ингредиентов и его количества для блюда. Например, для такого вызова
 get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
-Должен быть следующий результат:
-{
-  'Картофель': {'measure': 'кг', 'quantity': 2},
-  'Молоко': {'measure': 'мл', 'quantity': 200},
-  'Помидор': {'measure': 'шт', 'quantity': 4},
-  'Сыр гауда': {'measure': 'г', 'quantity': 200},
-  'Яйцо': {'measure': 'шт', 'quantity': 4},
-  'Чеснок': {'measure': 'зубч', 'quantity': 6}
-}
 Обратите внимание, что ингредиенты могут повторяться'''
+
 from pprint import pprint
 with open('recipes.txt', 'r', encoding='utf-8') as f:
     cook_book = {}
@@ -24,7 +16,6 @@ with open('recipes.txt', 'r', encoding='utf-8') as f:
               list_deash += [{'ingredient_name' : eat, 'quantity' : colvo, 'measure' : ed_izmer}]
          cook_book[dishes.strip()] = list_deash
          f.readline()
-    # print(cook_book)
 
 def get_shop_list_by_dishes(dishes, person_count) :
     '''Функция выдает словарь с названием ингредиентов и его количества для блюда'''        
